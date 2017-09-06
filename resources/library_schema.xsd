@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.it-academy.by/library_schema" 
+	xmlns:tns="http://www.it-academy.by/library_schema"
+	elementFormDefault="qualified">
+
+	<xs:element name="library" type="tns:literature_type"></xs:element>
+	
+	<xs:complexType name="literature_type">
+		<xs:sequence>
+			<xs:element name="books" type="tns:books_type" maxOccurs="unbounded"/>
+			<xs:element name="magazines" type="tns:magazines_type" maxOccurs="unbounded"/>
+			<xs:element name="newspapers" type="tns:newspapers_type" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="base_type">
+		<xs:sequence>
+			<xs:element name="title" type="xs:string" />
+			<xs:element name="pages" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="books_type">
+		<xs:sequence>
+			<xs:element name="book" type="tns:book_type" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="book_type">
+		<xs:complexContent>
+			<xs:extension base="tns:base_type">
+				<xs:sequence>
+					<xs:element name="author" type="tns:author_type" maxOccurs="2" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="magazines_type">
+		<xs:sequence>
+			<xs:element name="magazine" type="tns:magazine_type" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="magazine_type">
+		<xs:complexContent>
+			<xs:extension base="tns:base_type">
+				<xs:sequence>
+					<xs:element name="publisher" type="xs:string" maxOccurs= "1" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="newspapers_type">
+		<xs:sequence>
+			<xs:element name="newspaper" type="tns:newspaper_type" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="newspaper_type">
+		<xs:complexContent>
+			<xs:extension base="tns:base_type">
+				<xs:sequence>
+					<xs:element name="language" type="xs:string" maxOccurs= "1" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="author_type">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="surname" type="xs:string" />
+			<xs:element name="date" type="xs:date" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

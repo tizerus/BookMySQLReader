@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.it-academy.by/library_schema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.it-academy.by/library_schema library_schema.xsd">
+
+	
+	<books>
+		<book>
+			<title>Book1</title>
+			<pages>345</pages>
+			<author>
+				<name>Viktor</name>
+				<surname>Ivanov</surname>
+				<date>1987-04-21</date>
+			</author>
+		</book>
+		<book>
+			<title>Book2</title>
+			<pages>218</pages>
+			<author>
+				<name>Petr</name>
+				<surname>Petrov</surname>
+				<date>1997-01-01</date>
+			</author>
+		</book>
+	</books>
+	<magazines>
+		<magazine>
+			<title>Maxim</title>
+			<pages>40</pages>
+			<publisher>какой-нибудь издатель</publisher>
+		</magazine>
+		<magazine>
+			<title>Mens Health</title>
+			<pages>30</pages>
+			<publisher>издатель</publisher>
+		</magazine>
+	</magazines>
+	<newspapers>
+		<newspaper>
+			<title>New York Times</title>
+			<pages>20</pages>
+			<language>русский</language>
+		</newspaper>
+		<newspaper>
+			<title>News from insiders</title>
+			<pages>10</pages>
+			<language>английский</language>
+		</newspaper>
+	</newspapers>
+	
+</library>
